@@ -42,14 +42,14 @@ describe('OAuthTokenProvider', function() {
 
       angular.mock.module('angular-oauth2', 'angular-oauth2.test');
 
-      angular.mock.inject(function(OAuthToken) {
-        OAuthToken.setToken({ token_type: 'bearer', access_token: 'foo', expires_in: 3600, refresh_token: 'bar' });
+      angular.mock.inject(function(OAuthStorage) {
+        OAuthStorage.setToken({ token_type: 'bearer', access_token: 'foo', expires_in: 3600, refresh_token: 'bar' });
       });
 
     });
 
-    afterEach(inject(function(OAuthToken) {
-      OAuthToken.removeToken();
+    afterEach(inject(function(OAuthStorage) {
+      OAuthStorage.removeToken();
     }));
 
     it('getAuthorizationHeader()', inject(function(OAuthToken) {
