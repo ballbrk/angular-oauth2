@@ -1,10 +1,11 @@
 {
-  "name": "angular-oauth2",
+  "name": "angular-oauth2-extended",
   "version": "3.0.1",
-  "description": "AngularJS OAuth2",
+  "description": "This is a custom version of AngularJS OAuth2 with support for convert token  from facebook to oauth.",
   "main": "./dist/angular-oauth2.js",
   "authors": [
-    "Seegno <projects@seegno.com>"
+    "Seegno <projects@seegno.com>",
+    "Ballbrk <ballbrk@gmail.com>"
   ],
   "keywords": [
     "AngularJS",
@@ -12,7 +13,7 @@
     "OAuth2"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/seegno/angular-oauth2",
+  "homepage": "https://github.com/ballbrk/angular-oauth2-extended",
   "ignore": [
     "**/.*",
     "bower_components",
