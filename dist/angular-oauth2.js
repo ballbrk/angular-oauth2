@@ -48,6 +48,7 @@
         baseUrl: null,
         clientId: null,
         clientSecret: null,
+        convertTokenPath: null,
         grantPath: "/oauth2/token",
         revokePath: "/oauth2/revoke"
     };
@@ -160,6 +161,32 @@
                             };
                             return $http.post("" + config.baseUrl + "" + config.revokePath, data, options).then(function(response) {
                                 OAuthToken.removeToken();
+                                return response;
+                            });
+                        },
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    },
+                    convertFacebookToken: {
+                        value: function convertFacebookToken(token, options) {
+                            var data = {
+                                client_id: config.clientId,
+                                grant_type: "convert_token",
+                                backend: "facebook",
+                                token: token
+                            };
+                            if (null !== config.clientSecret) {
+                                data.client_secret = config.clientSecret;
+                            }
+                            data = queryString.stringify(data);
+                            options = angular.extend({
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                }
+                            }, options);
+                            return $http.post("" + config.baseUrl + "" + config.convertTokenPath, data, options).then(function(response) {
+                                OAuthToken.setToken(response.data);
                                 return response;
                             });
                         },
