@@ -8,13 +8,12 @@ AngularJS OAuth2 authentication module written in ES6.
 
 Choose your preferred method:
 
-* Bower: `bower install angular-oauth2`
-* NPM: `npm install --save angular-oauth2`
-* Download: [angular-oauth2](https://raw.github.com/seegno/angular-oauth2/master/dist/angular-oauth2.min.js)
+* Bower: `bower install angular-oauth2-extended`
+* Download: [angular-oauth2-extended](https://raw.github.com/ballbrk/angular-oauth2-extended/master/dist/angular-oauth2.min.js)
 
 ## Usage
 
-###### 1. Download `angular-oauth2` dependencies.
+###### 1. Download `angular-oauth2-extended` dependencies.
 
 * [angular](https://github.com/angular/angular.js)
 * [angular-cookies](https://github.com/angular/bower-angular-cookies)
@@ -77,6 +76,7 @@ OAuthProvider.configure({
   baseUrl: null,
   clientId: null,
   clientSecret: null,
+  convertTokenPath: 'oauth2/convert-token',
   grantPath: '/oauth2/token',
   revokePath: '/oauth2/revoke'
 });
