@@ -1,6 +1,6 @@
 {
   "name": "angular-oauth2-extended",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "This is a custom version of AngularJS OAuth2 with support for convert token  from facebook to oauth.",
   "main": "./dist/angular-oauth2.js",
   "authors": [
